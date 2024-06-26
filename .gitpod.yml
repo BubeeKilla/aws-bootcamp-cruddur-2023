@@ -9,6 +9,9 @@ tasks:
       sudo ./aws/install 
       cd $THEIA_WORKSPACE_ROOT
       pip install --upgrade pip
+      cd $THEIA_WORKSPACE_ROOT/frontend-react-js
+      npm install
+      cd $THEIA_WORKSPACE_ROOT
 vscode:
   extensions:
     - 42Crunch.vscode-openapi
