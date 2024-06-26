@@ -2,7 +2,7 @@
 
 AWS CLI https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
-Gitpod Browser VSC credentials config command - (in terminal) aws configure
+Gitpod Browser VSC credentials config command - (in terminal) aws configure, or configure env with export to bash
 
 ![gitpod yml](https://github.com/BubeeKilla/aws-bootcamp-cruddur-2023/assets/76734789/87ef64e9-f623-4a8d-b7e8-50ec63fcdb5d)
 
