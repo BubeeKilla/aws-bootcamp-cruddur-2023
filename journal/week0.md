@@ -1,30 +1,21 @@
-# Week 0 — Billing and Architecture
+# Getting the AWS CLI Working
+    We'll be using the AWS CLI often in this bootcamp, so we'll proceed to installing this account.
 
-# AWS CLI 
-https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
-
-# Gitpod Browser VSC credentials config command - (in terminal) aws configure, or configure env with export to bash
-
-![gitpod yml](https://github.com/BubeeKilla/aws-bootcamp-cruddur-2023/assets/76734789/87ef64e9-f623-4a8d-b7e8-50ec63fcdb5d)
-
-# Budget commands 
-https://docs.aws.amazon.com/cli/latest/reference/budgets/#available-commands
-
-# How can I monitor daily EstimatedCharges and activate a CloudWatch alarm based on my usage threshold? 
-https://repost.aws/knowledge-center/cloudwatch-estimatedcharges-alarm
-
-# Removing sensitive data from a repository 
-https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository 
-https://rtyley.github.io/bfg-repo-cleaner/
+# Install AWS CLI
+    We are going to install the AWS CLI when our Gitpod enviroment lanuches.
+    We are are going to set AWS CLI to use partial autoprompt mode to make it easier to debug CLI commands.
+    The bash commands we are using are the same as the [AWS CLI Install Instructions]https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+    Update our .gitpod.yml to include the following task.
 
 
-tasks:
-  - name: aws-cli
-    env:
-      AWS_CLI_AUTO_PROMPT: on-partial
-    init: |
-      cd /workspace
-      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-      unzip awscliv2.zip
-      sudo ./aws/install
-      cd $THEIA_WORKSPACE_ROOT
+
+# We'll also run these commands indivually to perform the install manually
+
+# Create a new User and Generate AWS Credentials
+    Go to  IAM Users Console, create a new user
+    Enable console access for the user
+    Create a new Admin Group and apply AdministratorAccess
+    Create the user and go find and click into the user
+    Click on Security Credentials and Create Access Key
+    Choose AWS CLI Access
+    Download the CSV with the credentials
