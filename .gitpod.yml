@@ -12,6 +12,10 @@ tasks:
       cd $THEIA_WORKSPACE_ROOT/frontend-react-js
       npm install
       cd $THEIA_WORKSPACE_ROOT
+      npm fund
+      npm audit fix
+      npm i --package-lock-only
+      npm audit fix
 
   - name: postgres
     init: |
