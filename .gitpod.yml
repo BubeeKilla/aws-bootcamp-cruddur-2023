@@ -8,6 +8,7 @@ tasks:
       unzip awscliv2.zip 
       sudo ./aws/install 
       cd $THEIA_WORKSPACE_ROOT
+      
   - name: pip-upgrade
     init: |
       cd /workspace
@@ -47,4 +48,10 @@ ports:
     visibility: public
   - name: xray-daemon
     port: 2000
+    visibility: public
+  - name: dynamoDB
+    port: 8000
+    visibility: public
+  - name: postgres
+    port: 5432
     visibility: public
