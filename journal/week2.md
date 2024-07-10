@@ -269,6 +269,7 @@ Import for Rollbar
 import rollbar
 import rollbar.contrib.flask
 from flask import got_request_exception
+# we can add got_request_exception at top where we find "from flask import Flask" as "from flask import Flask, got_request_exception"
 ```
 
 ```py
