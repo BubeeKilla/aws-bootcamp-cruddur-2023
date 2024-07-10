@@ -8,10 +8,20 @@ tasks:
       unzip awscliv2.zip 
       sudo ./aws/install 
       cd $THEIA_WORKSPACE_ROOT
+  - name: pip-upgrade
+    init: |
+      cd /workspace
       pip install --upgrade pip
+      
+  - name: resct-js
+    init: |
       cd $THEIA_WORKSPACE_ROOT/frontend-react-js
       npm install
       cd $THEIA_WORKSPACE_ROOT
+      npm fund
+      npm audit fix
+      npm i --package-lock-only
+      npm audit fix
 
   - name: postgres
     init: |
@@ -25,3 +35,16 @@ vscode:
     - 42Crunch.vscode-openapi
     - cweijan.vscode-database-client2
     - cweijan.dbclient-jdbc
+
+
+ports:
+  - name: frontend
+    port: 3000
+    onOpen: open-browser
+    visibility: public
+  - name: backend
+    port: 4567
+    visibility: public
+  - name: xray-daemon
+    port: 2000
+    visibility: public
