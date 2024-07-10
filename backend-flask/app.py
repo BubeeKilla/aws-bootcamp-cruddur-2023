@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, got_request_exception
 from flask import request
 from flask_cors import CORS, cross_origin
 import os
@@ -34,7 +34,6 @@ from time import strftime
 #Rollbar
 import rollbar
 import rollbar.contrib.flask
-from flask import got_request_exception
 
 # HoneyComb
 # Initialize tracing and an exporter that can send data to Honeycomb
@@ -87,7 +86,8 @@ def after_request(response):
 
 #Rollbar
 rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
-@app.before_first_request
+
+@app.before_request
 def init_rollbar():
     """init rollbar module"""
     rollbar.init(
