@@ -145,7 +145,7 @@ def data_create_message():
   return
 
 @app.route("/api/activities/home", methods=['GET'])
-@xray_recorder.capture('activities_home')
+@xray_recorder.capture('this_is_the_home_api_activities_home_wow')
 def data_home():
   data = HomeActivities.run(logger=LOGGER)
   return data, 200
