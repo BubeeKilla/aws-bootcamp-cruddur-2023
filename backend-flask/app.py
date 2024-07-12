@@ -77,7 +77,7 @@ RequestsInstrumentor().instrument()
 #X-Ray
 XRayMiddleware(app, xray_recorder)
 
-#Cloudwatch / Watchtower
+#Cloudwatch / Watchtower Logs
 @app.after_request
 def after_request(response):
     timestamp = strftime('[%Y-%b-%d %H:%M]')
